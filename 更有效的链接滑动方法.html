@@ -1,0 +1,84 @@
+`
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scroller</title>
+    <style>
+      #one {
+        height: 500px;
+        background-color: aqua;
+      }
+
+      #two {
+        height: 500px;
+        background-color: rgb(16, 14, 112);
+      }
+
+      #three {
+        height: 500px;
+        background-color: rgb(184, 23, 79);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <ul>
+          <li><a class="link" href="#one">One</a></li>
+          <li><a class="link" href="#two">Two</a></li>
+          <li><a class="link" href="#three">Three</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="one">
+      <h1>One</h1>
+      <p>
+        Quasi, fugit in cumque cupiditate reprehenderit debitis animi enim
+        eveniet consequatur odit quam quos possimus assumenda dicta fuga
+        inventore ab.
+      </p>
+    </section>
+
+    <section id="two">
+      <h1>Two</h1>
+      <p>
+        Quasi, fugit in cumque cupiditate reprehenderit debitis animi enim
+        eveniet consequatur odit quam quos possimus assumenda dicta fuga
+        inventore ab.
+      </p>
+    </section>
+
+    <section id="three">
+      <h1>Three</h1>
+      <p>
+        Quasi, fugit in cumque cupiditate reprehenderit debitis animi enim
+        eveniet consequatur odit quam quos possimus assumenda dicta fuga
+        inventore ab.
+      </p>
+    </section>
+  </body>
+
+  <script type="text/javascript">
+    const nav = document.querySelector(".nav");
+    //利用DOM propagation 创建一个点击事件但是可以用于所有链接，相比给所有的链接添加事件会更高效
+    nav.addEventListener("click", function (e) {
+      e.preventDefault(); //消除使用锚点定位的影响
+      //link 包含于所有的链接中
+      if (e.target.classList.contains("link")) {
+        //通过href 获得定位位置
+        const id = e.target.getAttribute("href");
+        console.log(id);
+        //smooth 滑动
+        document.querySelector(id).scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    });
+  </script>
+</html>
+
+`
