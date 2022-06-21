@@ -1,1 +1,5 @@
-#as
+ # Event
+ 
+ # addEventListener()
+ # propagation
+ 
