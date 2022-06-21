@@ -29,7 +29,5 @@ Node.NOTATION_NODE
 
 elemen is a node of a specific type(Node.ELEMENT_NODE)
 an element is a node that'written using a tag in the HTML document.
-
- <html>, <head>, <title>, <body>, <h2>, <p> are all elements because they are represented by tags.
-  
-The document type, the comment, the text nodes aren't elements because they are not written with tags:
+`<html>, <head>, <title>, <body>, <h2>,` are all element because they are represented by tags.
+The document type, the comment, the text nodes aren't elements because they are not written with tags
