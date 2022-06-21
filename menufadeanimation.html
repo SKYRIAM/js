@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="menufadeanimation.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <img
+          src="img/logo.png"
+          alt="Bankist logo"
+          class="nav__logo"
+          id="logo"
+        />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Operations</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Testimonials</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Open account</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+  <script type="text/javaScript">
+
+    //menu fade animation
+    const handleHover = function (e) {
+      if (e.target.classList.contains('nav__link')) {
+        const link = e.target;
+        const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+
+        const logo = link.closest('.nav').querySelector('img');
+        siblings.forEach(el => {
+          if (el !== link) el.style.opacity = this;
+        });
+        logo.style.opacity = this;
+      }
+    };
+
+    const nav = document.querySelector('.nav');
+    //mouseover can make bubble
+
+    //bind method will return a new function,the variable will now be set to the value
+    // can only take a virable
+    nav.addEventListener('mouseover', handleHover.bind(0.5));
+
+    nav.addEventListener('mouseout', handleHover.bind(1));
+  </script>
+</html>
